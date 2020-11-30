@@ -24,3 +24,7 @@ A few utilities usefull when writing games in typescript.
   - all: return true if all elements in an array are truthy
   - any: return true if at least one element in an array is truthy
   - range: return an array filled with numbers from 0 to i (non-inclusive). This is not base on generators/iterators and will create the whole array eagerly
+
+# others
+  - Cooldown: an object which takes track of time elasped between two uses of a feture and allow to rate limit the usage
+  - TagManger: an object which helps in managing multiple strings as tags for something else
