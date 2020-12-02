@@ -18,6 +18,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -177,7 +193,7 @@ describe("testing contains", function () {
 describe("test get lines", function () {
     it("gives the right lines, from origin", function () {
         var rec = new __1.default(0, 0, 20, 40);
-        var _a = rec.lines, top = _a[0], right = _a[1], bottom = _a[2], left = _a[3];
+        var _a = __read(rec.lines, 4), top = _a[0], right = _a[1], bottom = _a[2], left = _a[3];
         expect(top).toEqual(new Line_1.default(0, 0, 20, 0));
         expect(right).toEqual(new Line_1.default(20, 0, 20, 40));
         expect(bottom).toEqual(new Line_1.default(20, 40, 0, 40));
@@ -185,7 +201,7 @@ describe("test get lines", function () {
     });
     it("gives the right lines, not on origin", function () {
         var rec = new __1.default(100, 100, 20, 40);
-        var _a = rec.lines, top = _a[0], right = _a[1], bottom = _a[2], left = _a[3];
+        var _a = __read(rec.lines, 4), top = _a[0], right = _a[1], bottom = _a[2], left = _a[3];
         expect(top).toEqual(new Line_1.default(100, 100, 120, 100));
         expect(right).toEqual(new Line_1.default(120, 100, 120, 140));
         expect(bottom).toEqual(new Line_1.default(120, 140, 100, 140));
@@ -193,7 +209,7 @@ describe("test get lines", function () {
     });
     it("gives the right lines, x !== y", function () {
         var rec = new __1.default(200, 100, 20, 40);
-        var _a = rec.lines, top = _a[0], right = _a[1], bottom = _a[2], left = _a[3];
+        var _a = __read(rec.lines, 4), top = _a[0], right = _a[1], bottom = _a[2], left = _a[3];
         expect(top).toEqual(new Line_1.default(200, 100, 220, 100));
         expect(right).toEqual(new Line_1.default(220, 100, 220, 140));
         expect(bottom).toEqual(new Line_1.default(220, 140, 200, 140));

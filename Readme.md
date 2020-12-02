@@ -27,4 +27,4 @@ A few utilities usefull when writing games in typescript.
 
 # others
   - Cooldown: an object which takes track of time elasped between two uses of a feture and allow to rate limit the usage
-  - TagManger: an object which helps in managing multiple strings as tags for something else
+  - TagManager: an object which helps in managing multiple strings as tags for something else
