@@ -1,4 +1,4 @@
-import TagManager from "../TagManager"
+import TagManager from ".."
 
 
 describe("testing the tag manager", () => {

@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Cooldown = exports.Line = exports.Rect = exports.Vec2 = void 0;
+exports.TagManager = exports.Cooldown = exports.Line = exports.Rect = exports.Vec2 = void 0;
 var Vec2_1 = __importDefault(require("./Vec2"));
 exports.Vec2 = Vec2_1.default;
 var Rect_1 = __importDefault(require("./Rect"));
@@ -22,6 +22,8 @@ var Line_1 = __importDefault(require("./Line"));
 exports.Line = Line_1.default;
 var Cooldown_1 = __importDefault(require("./Cooldown"));
 exports.Cooldown = Cooldown_1.default;
+var TagManager_1 = __importDefault(require("./TagManager"));
+exports.TagManager = TagManager_1.default;
 __exportStar(require("./Exceptions"), exports);
 __exportStar(require("./Utils"), exports);
 __exportStar(require("./Events"), exports);

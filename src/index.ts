@@ -2,6 +2,7 @@ import Vec2 from "./Vec2"
 import Rect from "./Rect"
 import Line from "./Line"
 import Cooldown from "./Cooldown"
+import TagManager from "./TagManager"
 export * from "./Exceptions"
 export * from "./Utils"
 export * from "./Events"
@@ -12,4 +13,5 @@ export {
   Rect,
   Line,
   Cooldown,
+  TagManager
 }
