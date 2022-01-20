@@ -28,3 +28,9 @@ export function range(max: number) {
   }
   return ret
 }
+
+export function* reversed<T>(array: T[]) {
+  for (let index = array.length - 1 ; index >= 0 ; --index) {
+    yield array[index]
+  }
+}
