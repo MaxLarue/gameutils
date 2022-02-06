@@ -46,7 +46,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.reversed = exports.range = exports.any = exports.all = exports.sum = exports.assert = void 0;
+exports.DefaultMap = exports.reversed = exports.range = exports.any = exports.all = exports.sum = exports.assert = void 0;
 var exceptions = __importStar(require("../Exceptions"));
 function assert(expr, msg) {
     if (!expr) {
@@ -101,4 +101,25 @@ function reversed(array) {
     });
 }
 exports.reversed = reversed;
+var DefaultMap = /** @class */ (function () {
+    function DefaultMap(factory) {
+        this.factory = factory;
+        this.innerMap = {};
+    }
+    DefaultMap.prototype.get = function (key) {
+        if (!(key in this.innerMap)) {
+            this.innerMap[key] = this.factory(key);
+        }
+        return this.innerMap[key];
+    };
+    DefaultMap.prototype.set = function (key, value) {
+        this.innerMap[key] = value;
+    };
+    DefaultMap.prototype.update = function (key, updateFunction) {
+        this.set(key, updateFunction(this.get(key)));
+    };
+    DefaultMap.prototype.clear = function () { this.innerMap = {}; };
+    return DefaultMap;
+}());
+exports.DefaultMap = DefaultMap;
 //# sourceMappingURL=index.js.map

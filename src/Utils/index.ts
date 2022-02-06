@@ -34,3 +34,28 @@ export function* reversed<T>(array: T[]) {
     yield array[index]
   }
 }
+
+export type DefaultMapFactory<K extends string | number | symbol, V> = (key: K) => V
+export class DefaultMap<K extends string | number | symbol, V> {
+  private innerMap: Record<K, V> = {} as Record<K, V>
+
+  constructor(private readonly factory: DefaultMapFactory<K, V>) {
+  }
+
+  get(key: K): V {
+    if (!(key in this.innerMap)) {
+      this.innerMap[key] = this.factory(key)
+    }
+    return this.innerMap[key]
+  }
+
+  set(key: K, value: V) {
+    this.innerMap[key] = value
+  }
+
+  update(key: K, updateFunction: (previousValue: V) => V) {
+    this.set(key, updateFunction(this.get(key)))
+  }
+
+  clear() {this.innerMap = {} as Record<K, V>}
+}
